@@ -8,6 +8,11 @@ Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
 Console.WriteLine("--------------------------------------------");
 Console.WriteLine();
 
+// =List of answers that the moose can say
+
+string[] answers = {"As i see it, yes", "Ask again later" , "Better not tell you now" , "Dont Count on it", "Most Likely"};
+int answersLength = answers.Length;
+
 string HumanQuestion()
 {
    Console.WriteLine("Ask the Magic Moose a question.");
@@ -17,7 +22,9 @@ string HumanQuestion()
 
 string mooseAnswer()
 {
-string mooseAnswer = "This is my house.";
+Random r = new Random();
+int genRand = r.Next(0,answersLength);
+string mooseAnswer = answers[genRand];
 return mooseAnswer;
 }
 
