@@ -8,28 +8,24 @@ Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
 Console.WriteLine("--------------------------------------------");
 Console.WriteLine();
 
-// Let the Moose Speak!
+string HumanQuestion()
+{
+   Console.WriteLine("Ask the Magic Moose a question.");
+    string HQ = Console.ReadLine();
+    return HQ;
+};
 
-MooseSays("HI, I'M E N T H U S I A S T I C!");
-MooseSays("Im really enthusiatic");
+string mooseAnswer()
+{
+string mooseAnswer = "This is my house.";
+return mooseAnswer;
+}
 
-// List of questions to use
-
-string questionONE = "Are you alive?";
-string answerOneTrue = "I dont belive you!";
-string answerOneFalse = "I knew it!";
-
-string questionTwo = "Are you crying?";
-string answerTwoTrue = "It gonna be otay!";
-string answerTwoFalse = "Im not crying! Your Crying!";
-
-// Ask a question
-MooseQuestion(questionONE,answerOneTrue, answerOneFalse );
-MooseQuestion(questionTwo,answerTwoTrue, answerTwoFalse );
+MooseSays(HumanQuestion() , mooseAnswer());
 
 };
 
-void MooseSays(string message) => Console.WriteLine($@"
+void MooseSays(string askedQuestion, string message ) => Console.WriteLine($@"
                                       _.--^^^--,git
                                     .'          `\
   .-^^^^^^-.                      .'              |
@@ -45,7 +41,7 @@ void MooseSays(string message) => Console.WriteLine($@"
           \_/ |  |   './ _     _  \.'
                '-'    | /       \ |
                       |  .-. .-.  |
-                      \ / o| |o \ /
+                      \ / o| |o \ /   {askedQuestion}
                        |   / \   |    {message}
                       / `^`   `^` \
                      /             \
@@ -59,37 +55,6 @@ void MooseSays(string message) => Console.WriteLine($@"
     ");
 
 
-bool MooseAsks(string question)
-{
-    Console.Write($"{question} (Y/N): ");
-    string answer = Console.ReadLine().ToLower();
 
-    while (answer != "y" && answer != "n")
-    {
-        Console.Write($"{question} (Y/N):");
-        answer = Console.ReadLine().ToLower();
-    }
-    if (answer == "y")
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-
-void MooseQuestion(string mooseQuestion, string mooseSaysTrue, string mooseSaysFalse)
-{
-    bool isTrue = MooseAsks(mooseQuestion);
-    if (isTrue)
-    {
-        MooseSays(mooseSaysTrue);
-    }
-    else
-    {
-        MooseSays(mooseSaysFalse);
-    }
-}
 
 
