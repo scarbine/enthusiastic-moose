@@ -4,7 +4,7 @@ Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
 Console.WriteLine("--------------------------------------------");
 Console.WriteLine();
 
-void MooseSays() => Console.WriteLine($@"
+void MooseSays(string message) => Console.WriteLine($@"
                                       _.--^^^--,git
                                     .'          `\
   .-^^^^^^-.                      .'              |
@@ -21,7 +21,7 @@ void MooseSays() => Console.WriteLine($@"
                '-'    | /       \ |
                       |  .-. .-.  |
                       \ / o| |o \ /
-                       |   / \   |    {"Hello"}
+                       |   / \   |    {message}
                       / `^`   `^` \
                      /             \
                     | '._.'         \
@@ -33,4 +33,5 @@ void MooseSays() => Console.WriteLine($@"
                        `^^` `^^^`
     ");
 
-MooseSays();
+MooseSays("HI, I'M E N T H U S I A S T I C!");
+MooseSays("Im really enthusiatic");
