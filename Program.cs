@@ -1,8 +1,23 @@
 ﻿using System;
 
+Main();
+
+void Main()
+{
 Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
 Console.WriteLine("--------------------------------------------");
 Console.WriteLine();
+
+// Let the Moose Speak!
+
+MooseSays("HI, I'M E N T H U S I A S T I C!");
+MooseSays("Im really enthusiatic");
+
+// Ask a question
+AliveQuestion();
+CryingQuestion();
+
+};
 
 void MooseSays(string message) => Console.WriteLine($@"
                                       _.--^^^--,git
@@ -33,35 +48,50 @@ void MooseSays(string message) => Console.WriteLine($@"
                        `^^` `^^^`
     ");
 
-MooseSays("HI, I'M E N T H U S I A S T I C!");
-MooseSays("Im really enthusiatic");
 
-bool MooseAsks( string question){
+bool MooseAsks(string question)
+{
     Console.Write($"{question} (Y/N): ");
     string answer = Console.ReadLine().ToLower();
 
-    while (answer != "y" && answer != "n"){
+    while (answer != "y" && answer != "n")
+    {
         Console.Write($"{question} (Y/N):");
         answer = Console.ReadLine().ToLower();
     }
-    if (answer == "y"){
-        return true ;
-    } 
+    if (answer == "y")
+    {
+        return true;
+    }
     else
     {
         return false;
     }
 }
 
-// bool isTrue = MooseAsks("Are you alive?");
-// Console.WriteLine(isTrue);
-
-bool isTrue = MooseAsks("Are you alive?");
-if (isTrue) 
+void AliveQuestion()
 {
-    MooseSays("I dont belive you!");
+    bool isTrue = MooseAsks("Are you alive?");
+    if (isTrue)
+    {
+        MooseSays("I dont belive you!");
+    }
+    else
+    {
+        MooseSays("I knew it!");
+    }
 }
-else
+
+
+void CryingQuestion()
 {
-    MooseSays("I knew it!");
+    bool isTrue = MooseAsks("Are you crying?");
+    if(isTrue)
+    {
+        MooseSays("It gonna be otay!");
+    }
+    else
+    {
+        MooseSays("Im not crying. You're Crying!");
+    }
 }
