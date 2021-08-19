@@ -13,9 +13,19 @@ Console.WriteLine();
 MooseSays("HI, I'M E N T H U S I A S T I C!");
 MooseSays("Im really enthusiatic");
 
+// List of questions to use
+
+string questionONE = "Are you alive?";
+string answerOneTrue = "I dont belive you!";
+string answerOneFalse = "I knew it!";
+
+string questionTwo = "Are you crying?";
+string answerTwoTrue = "It gonna be otay!";
+string answerTwoFalse = "Im not crying! Your Crying!";
+
 // Ask a question
-AliveQuestion();
-CryingQuestion();
+MooseQuestion(questionONE,answerOneTrue, answerOneFalse );
+MooseQuestion(questionTwo,answerTwoTrue, answerTwoFalse );
 
 };
 
@@ -69,29 +79,17 @@ bool MooseAsks(string question)
     }
 }
 
-void AliveQuestion()
+void MooseQuestion(string mooseQuestion, string mooseSaysTrue, string mooseSaysFalse)
 {
-    bool isTrue = MooseAsks("Are you alive?");
+    bool isTrue = MooseAsks(mooseQuestion);
     if (isTrue)
     {
-        MooseSays("I dont belive you!");
+        MooseSays(mooseSaysTrue);
     }
     else
     {
-        MooseSays("I knew it!");
+        MooseSays(mooseSaysFalse);
     }
 }
 
 
-void CryingQuestion()
-{
-    bool isTrue = MooseAsks("Are you crying?");
-    if(isTrue)
-    {
-        MooseSays("It gonna be otay!");
-    }
-    else
-    {
-        MooseSays("Im not crying. You're Crying!");
-    }
-}
