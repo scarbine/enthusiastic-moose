@@ -53,5 +53,15 @@ bool MooseAsks( string question){
     }
 }
 
+// bool isTrue = MooseAsks("Are you alive?");
+// Console.WriteLine(isTrue);
+
 bool isTrue = MooseAsks("Are you alive?");
-Console.WriteLine(isTrue);
+if (isTrue) 
+{
+    MooseSays("I dont belive you!");
+}
+else
+{
+    MooseSays("I knew it!");
+}
