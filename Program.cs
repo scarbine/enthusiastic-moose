@@ -1,8 +1,23 @@
 ﻿using System;
 
+Main();
+
+void Main()
+{
 Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
 Console.WriteLine("--------------------------------------------");
 Console.WriteLine();
+
+// Let the Moose Speak!
+
+MooseSays("HI, I'M E N T H U S I A S T I C!");
+MooseSays("Im really enthusiatic");
+
+// Ask a question
+AliveQuestion();
+CryingQuestion();
+
+};
 
 void MooseSays(string message) => Console.WriteLine($@"
                                       _.--^^^--,git
@@ -33,8 +48,6 @@ void MooseSays(string message) => Console.WriteLine($@"
                        `^^` `^^^`
     ");
 
-MooseSays("HI, I'M E N T H U S I A S T I C!");
-MooseSays("Im really enthusiatic");
 
 bool MooseAsks(string question)
 {
@@ -56,11 +69,6 @@ bool MooseAsks(string question)
     }
 }
 
-// bool isTrue = MooseAsks("Are you alive?");
-// Console.WriteLine(isTrue);
-
-AliveQuestion();
-
 void AliveQuestion()
 {
     bool isTrue = MooseAsks("Are you alive?");
@@ -74,7 +82,6 @@ void AliveQuestion()
     }
 }
 
-CryingQuestion();
 
 void CryingQuestion()
 {
