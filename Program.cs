@@ -36,17 +36,20 @@ void MooseSays(string message) => Console.WriteLine($@"
 MooseSays("HI, I'M E N T H U S I A S T I C!");
 MooseSays("Im really enthusiatic");
 
-bool MooseAsks( string question){
+bool MooseAsks(string question)
+{
     Console.Write($"{question} (Y/N): ");
     string answer = Console.ReadLine().ToLower();
 
-    while (answer != "y" && answer != "n"){
+    while (answer != "y" && answer != "n")
+    {
         Console.Write($"{question} (Y/N):");
         answer = Console.ReadLine().ToLower();
     }
-    if (answer == "y"){
-        return true ;
-    } 
+    if (answer == "y")
+    {
+        return true;
+    }
     else
     {
         return false;
@@ -56,12 +59,32 @@ bool MooseAsks( string question){
 // bool isTrue = MooseAsks("Are you alive?");
 // Console.WriteLine(isTrue);
 
-bool isTrue = MooseAsks("Are you alive?");
-if (isTrue) 
+AliveQuestion();
+
+void AliveQuestion()
 {
-    MooseSays("I dont belive you!");
+    bool isTrue = MooseAsks("Are you alive?");
+    if (isTrue)
+    {
+        MooseSays("I dont belive you!");
+    }
+    else
+    {
+        MooseSays("I knew it!");
+    }
 }
-else
+
+CryingQuestion();
+
+void CryingQuestion()
 {
-    MooseSays("I knew it!");
+    bool isTrue = MooseAsks("Are you crying?");
+    if(isTrue)
+    {
+        MooseSays("It gonna be otay!");
+    }
+    else
+    {
+        MooseSays("Im not crying. You're Crying!");
+    }
 }
